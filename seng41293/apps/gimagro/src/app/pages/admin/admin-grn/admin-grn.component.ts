@@ -2,6 +2,8 @@ import { Component, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppService } from '../../../services/app/app.service';
 import { MatButtonModule } from '@angular/material/button';
+import { Store } from '@ngxs/store';
+import { ShowLoading } from '../../../state/app/app.actions';
 
 @Component({
   selector: 'seng41293-admin-grn',
@@ -17,5 +19,9 @@ export class AdminGrnComponent {
   //To Do: How you communicate back with the parent
   // @Output() update = new EventEmitter<string>();
 
-  constructor(protected appService: AppService) {}
+  constructor(private store: Store) {}
+  
+  toggle(){
+    this.store.dispatch(new ShowLoading(true))
+  }
 }
