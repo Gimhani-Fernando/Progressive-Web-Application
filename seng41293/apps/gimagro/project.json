@@ -8,16 +8,30 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/gimagro",
         "index": "apps/gimagro/src/index.html",
         "main": "apps/gimagro/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/gimagro/tsconfig.app.json",
-        "assets": ["apps/gimagro/src/favicon.ico", "apps/gimagro/src/assets"],
-        "styles": ["apps/gimagro/src/styles.scss"],
-        "scripts": []
+        "assets": [
+          "apps/gimagro/src/favicon.ico",
+          "apps/gimagro/src/assets",
+          "apps/gimagro/src/manifest.webmanifest",
+          "apps/gimagro/src/manifest.webmanifest",
+          "apps/gimagro/src/manifest.webmanifest"
+        ],
+        "styles": [
+          "apps/gimagro/src/styles.scss"
+        ],
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/gimagro/ngsw-config.json"
       },
       "configurations": {
         "production": {
@@ -66,14 +80,21 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/gimagro/**/*.ts", "apps/gimagro/**/*.html"]
+        "lintFilePatterns": [
+          "apps/gimagro/**/*.ts",
+          "apps/gimagro/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/gimagro/jest.config.ts",
         "passWithNoTests": true

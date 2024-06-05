@@ -1,1 +1,8 @@
 <button mat-button (click)="toggle()">ToggleLoading</button>
+<form>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="email" name="email">
+    </mat-form-field>
+    <button mat-button (click)="emailChange()">Enter email</button>
+</form>
